@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Claim your journal</title>
+  <!-- Підключення шрифтів -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body data-page="index" data-step="1" data-show-back="false" data-show-continue="false">
+  
+  <div id="header-placeholder"></div> <!-- Сюди підвантажиться хедер -->
+  <div id="sub-header-placeholder"></div> <!-- Сюди підвантажиться підхедер -->
+
+
+  <main class="main-container">
+    <h1 id="title"></h1>
+    <p id="subtitle"></p>
+
+    <div class="input-group">
+      <label for="searchInput" id="searchLabel"></label>
+      <input type="text" id="searchPlaceholder" placeholder="">
+      <div id="dropdown" class="dropdown" style="display: none;"></div>
+      <div id="searchErrorText" class="input-error" style="display: none;"></div>
+    </div>
+
+    <div class="checkbox-group">
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="confirmationCheckbox">
+      </div>
+      <label for="confirmationCheckbox" id="confirmationText"></label>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-cancel" id="cancelButton">Cancel</button>
+      <button class="btn btn-continue" id="continueButton">Continue</button>
+    </div>
+  </main>
+
+  <script src="scripts/texts.js"></script>
+  <script src="scripts/main.js"></script>
+
+</body>
+</html>

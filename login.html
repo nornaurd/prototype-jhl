@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+
+  <!-- Підключення шрифтів -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Підключення стилів -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body data-page="login" data-step="3" data-show-back="true" data-show-continue="false">
+
+  <div id="header-placeholder"></div> <!-- Сюди підвантажиться хедер -->
+  <div id="sub-header-placeholder"></div> <!-- Сюди підвантажиться підхедер -->
+
+  <!-- Основний унікальний контент сторінки -->
+  <main class="main-container">
+    <h1 id="title"></h1>
+
+    <div class="input-group">
+      <label for="emailInput" id="emailLabel"></label>
+      <input type="email" id="emailInput" placeholder="" autocomplete="username">
+    </div>
+
+    <div class="input-group">
+      <label for="passwordInput" id="passwordLabel"></label>
+      <input type="password" id="passwordInput" placeholder="" autocomplete="current-password">
+    </div>
+
+    <div class="checkbox-group">
+      <div class="checkbox-wrapper">
+        <!-- Додаємо атрибут checked -->
+        <input type="checkbox" id="keepLoggedIn" checked>
+      </div>
+      <label for="keepLoggedIn" id="keepLoggedInLabel">Keep me logged in</label>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-continue" id="loginButton"></button>
+    </div>
+      
+        <!-- ▸ НОВИЙ КОД початок ▸ -->
+        <p class="separator-text">or</p>
+    
+        <button class="btn btn-google" id="googleButton">
+            <img src="assets/google_icon.png" alt="" class="btn-icon">
+            Continue with Google
+        </button>
+        <!-- ▸ НОВИЙ КОД кінець ▸ -->
+    
+
+    <div class="input-group">
+      <span id="signupPrompt"></span>
+    </div>
+  </main>
+
+  <!-- Підключення скриптів -->
+  <script src="scripts/domains.js"></script>
+  <script src="scripts/texts.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
