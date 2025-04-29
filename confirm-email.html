@@ -1,0 +1,54 @@
+<!-- confirm-email.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirm e-mail</title>
+
+  <!-- Шрифти -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Загальні стилі проєкту -->
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<!--
+  data-page   — ключ у pageTexts (confirmEmail)
+  data-step   — підсвічує крок-3 у sub-header
+-->
+<body data-page="confirmEmail"
+      data-step="3"
+      data-show-back="false"
+      data-show-continue="false"
+      data-show-step3="true">
+
+  <!-- Header і sub-header підтягуються fetch-ом з main.js -->
+  <div id="header-placeholder"></div>
+  <div id="sub-header-placeholder"></div>
+
+  <!-- Основний контент -->
+  <main class="main-container">
+    <h1 id="title"></h1>
+
+    <!-- Дві перші строки (8 px між ними) -->
+    <div class="text-group">
+      <p id="line1"></p>
+      <p id="line2"></p>
+    </div>
+
+    <!-- Наступні строки (за замовчанням p вже мають 24 px) -->
+    <p id="line3"></p>
+    <p id="line4"></p>
+
+    <a id="prototypeHint"
+    class="prototype-hint"
+    href="mailbox.html"
+    target="_blank"></a>
+  </main>
+
+  <!-- Скрипти проєкту -->
+  <script src="scripts/domains.js"></script>
+  <script src="scripts/texts.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

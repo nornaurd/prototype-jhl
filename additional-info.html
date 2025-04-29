@@ -1,0 +1,52 @@
+<!-- additional-info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Additional info</title>
+
+  <!-- Шрифти -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Загальні стилі проєкту -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<!--
+  data-page   — ключ у pageTexts (additionalInfo)
+  data-step   — підсвічує крок-3 у sub-header
+  data-show-* — керує кнопками Back / Continue
+-->
+<body data-page="additionalInfo"
+      data-step="3"
+      data-show-back="true"
+      data-show-continue="false"
+      data-show-step3="true">
+
+  <!-- Header і sub-header підтягнуться fetch-ом -->
+  <div id="header-placeholder"></div>
+  <div id="sub-header-placeholder"></div>
+
+  <!-- Основний контент сторінки -->
+  <main class="main-container">
+    <h1 id="title"></h1>
+    <p id="instructionText"></p>
+
+    <!-- Textarea “Additional information” -->
+    <div class="input-group">
+      <label for="moreInfoTextArea" id="moreInfoLabel"></label>
+      <textarea id="moreInfoTextArea" placeholder="" autocomplete="off"></textarea>
+    </div>
+
+    <!-- Кнопка “Submit information” -->
+    <div class="button-group">
+      <button class="btn btn-continue" id="submitButton"></button>
+    </div>
+  </main>
+
+  <!-- Скрипти проєкту -->
+  <script src="scripts/domains.js"></script>
+  <script src="scripts/texts.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

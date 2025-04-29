@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       /* — успішний перехід — */
-      if (valid) window.location.href = 'preview.html';
+      if (valid) window.location.href = 'login.html';
     });
 
     /* події input / blur / вибір із дропдауну — залишив як було */
@@ -116,29 +116,159 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('blur', () => setTimeout(() => (dropdown.style.display = 'none'), 150));
   })();
 
-  /* === Нова логіка: перевірка e-mail → редирект === */
-  (function initLoginRedirect() {
-    const emailInput = document.getElementById('emailInput');
-    const loginBtn   = document.getElementById('loginButton');
-    if (!emailInput || !loginBtn) return;          // скрипт працює і на сторінках без логіну
+/* === Log-in: перевірка Email + Password === */
+(function initLoginRedirect() {
+  const emailInput    = document.getElementById('emailInput');
+  const passwordInput = document.getElementById('passwordInput');
+  const loginBtn      = document.getElementById('loginButton');
+  if (!emailInput || !passwordInput || !loginBtn) return;   // запускається лише на login.html
 
-    const domainList = (window.recognizedDomains || []).map(d => d.toLowerCase());
+  const domainList = (window.recognizedDomains || []).map(d => d.toLowerCase());
 
-    loginBtn.addEventListener('click', e => {
-      e.preventDefault();
-      const email = emailInput.value.trim().toLowerCase();
+  /* — прибираємо invalid-клас під час введення — */
+  [emailInput, passwordInput].forEach(el =>
+    el.addEventListener('input', () => el.classList.remove('invalid'))
+  );
 
-      if (!email) {
-        emailInput.classList.add('invalid');
-        return;
-      }
+  loginBtn.addEventListener('click', e => {
+    e.preventDefault();
+    let valid = true;
 
-      // чи закінчується e-mail на @... з whitelist
-      const isKnown = domainList.some(domain => email.endsWith('@' + domain));
+    const email    = emailInput.value.trim().toLowerCase();
+    const password = passwordInput.value.trim();
 
-      window.location.href = isKnown ? 'checkout.html' : 'additional-info.html';
-    });
-  })();
+    /* — перевірка полів — */
+    if (!email) {
+      emailInput.classList.add('invalid');
+      valid = false;
+    }
+    if (!password) {
+      passwordInput.classList.add('invalid');
+      valid = false;
+    }
+    if (!valid) return;                         // блокуємо перехід, якщо є помилки
+
+    /* — далі логіка вибору сторінки залежно від домену — */
+    const isKnown = domainList.some(d => email.endsWith('@' + d));
+    window.location.href = isKnown ? 'checkout.html' : 'additional-email-info.html';
+  });
+})();
+
+
+  /* === Перевірка полів на signup.html === */
+(function initSignupValidation() {
+  const signupBtn       = document.getElementById('signupButton');
+  if (!signupBtn) return;                      // скрипт ігнорує інші сторінки
+
+  const firstNameInput  = document.getElementById('firstNameInput');
+  const lastNameInput   = document.getElementById('lastNameInput');
+  const emailInput      = document.getElementById('emailInput');
+  const passwordInput   = document.getElementById('passwordInput');
+  const agreeCheckbox   = document.getElementById('agreeCheckbox');
+  const checkboxWrapper = agreeCheckbox.closest('.checkbox-wrapper');
+
+  /* допоміжні функції */
+  const setValid   = el => el.classList.remove('invalid');
+  const setInvalid = el => el.classList.add('invalid');
+
+  /* очищаємо помилку під час введення */
+  [firstNameInput, lastNameInput, emailInput, passwordInput].forEach(input => {
+    input.addEventListener('input', () => setValid(input));
+  });
+  agreeCheckbox.addEventListener('change', () => {
+    setValid(agreeCheckbox);
+    checkboxWrapper.classList.remove('invalid');
+  });
+
+  /* головна перевірка при натисканні */
+  /* головна перевірка при натисканні */
+signupBtn.addEventListener('click', e => {
+  e.preventDefault();              // блокуємо стандартний submit
+  let valid = true;
+
+  /*–– базова перевірка полів ––*/
+  [firstNameInput, lastNameInput, emailInput, passwordInput].forEach(input => {
+    if (!input.value.trim()) {
+      setInvalid(input);
+      valid = false;
+    }
+  });
+
+  /*–– чекбокс ––*/
+  if (!agreeCheckbox.checked) {
+    setInvalid(agreeCheckbox);
+    checkboxWrapper.classList.add('invalid');
+    valid = false;
+  }
+
+  if (!valid) return;              // якщо є помилки – зупиняємось
+
+  /*–– логіка вибору сторінки ––*/
+  const domainList = (window.recognizedDomains || []).map(d => d.toLowerCase());
+  const email      = emailInput.value.trim().toLowerCase();
+  const isKnown    = domainList.some(d => email.endsWith('@' + d));
+
+  /*–– переходимо на потрібну сторінку ––*/
+  window.location.href = isKnown ? 'confirm-email.html' : 'additional-info.html';
+});
+
+})();
+
+/* === Additional-email-info: перевірка Business e-mail === */
+(function initAdditionalEmailRedirect() {
+  const emailInput  = document.getElementById('emailInput');      // поле Business email
+  const continueBtn = document.getElementById('businessContinueButton');  // кнопка Continue
+  if (!emailInput || !continueBtn) return;    // скрипт спрацює тільки на additional-email-info.html
+
+  /* — список відомих доменів — */
+  const domainList = (window.recognizedDomains || []).map(d => d.toLowerCase());
+
+  /* прибираємо .invalid у процесі введення */
+  emailInput.addEventListener('input', () => emailInput.classList.remove('invalid'));
+
+  continueBtn.addEventListener('click', e => {
+    e.preventDefault();
+    const email = emailInput.value.trim().toLowerCase();
+
+    /* — базова перевірка, що поле не порожнє — */
+    if (!email) {
+      emailInput.classList.add('invalid');
+      return;
+    }
+
+    /* — куди вести далі? — */
+    const isKnown = domainList.some(d => email.endsWith('@' + d));
+    window.location.href = isKnown ? 'confirm-email.html'  // ✅ домен зі списку
+                                   : 'additional-info.html'; // ❌ інший домен
+  });
+})();
+
+/* === Additional-info: перевірка текстового поля === */
+(function initAdditionalInfoValidation() {
+  const textarea    = document.getElementById('moreInfoTextArea');   // наше поле
+  const continueBtn = document.getElementById('submitButton');       // кнопка Continue
+  if (!textarea || !continueBtn) return;   // скрипт спрацює тільки на additional-info.html
+
+  /* під час введення - забираємо червону рамку */
+  textarea.addEventListener('input', () => textarea.classList.remove('invalid'));
+
+  /* натискання на Continue */
+  continueBtn.addEventListener('click', e => {
+    e.preventDefault();                                 // блокуємо стандартний submit
+
+    /* — поле порожнє? — */
+    if (!textarea.value.trim()) {
+      textarea.classList.add('invalid');                // додаємо червоний бордер
+      return;                                           // зупиняємось
+    }
+
+    /* — усе гаразд, переходимо далі — */
+    window.location.href = 'checkout.html';
+  });
+})();
+
+
+
 });
 
 
@@ -174,4 +304,10 @@ function setupSubHeader() {
       window.location.href = 'login.html';
     });
   }
+    /* === показ / приховування кроку 3 === */
+    const showStep3 = document.body.dataset.showStep3 === "true";   // true / false
+    document.querySelectorAll('.conditional-step').forEach(el => {
+      el.style.display = showStep3 ? '' : 'none';   // '' = за замовчуванням (видно)
+    });
+  
 }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body data-page="signup" data-step="2" data-show-back="true" data-show-continue="false">
+  <!-- Header & sub‑header -->
+  <div id="header-placeholder"></div>
+  <div id="sub-header-placeholder"></div>
+
+  <!-- Page content -->
+  <main class="main-container">
+    <h1 id="title"></h1>
+
+    <!-- First + Last name (у рядок) -->
+    <div class="input-row">
+      <div class="input-group">
+        <label for="firstNameInput" id="firstNameLabel"></label>
+        <input type="text" id="firstNameInput" placeholder="">
+      </div>
+
+      <div class="input-group">
+        <label for="lastNameInput" id="lastNameLabel"></label>
+        <input type="text" id="lastNameInput" placeholder="">
+      </div>
+    </div>
+
+    <!-- Business email + hint -->
+    <div class="input-group">
+      <label for="emailInput" id="emailLabel"></label>
+      <input type="email" id="emailInput" placeholder="" autocomplete="username">
+      <span id="emailHint" class="input-hint"></span>
+    </div>
+
+    <!-- Password -->
+    <div class="input-group">
+      <label for="passwordInput" id="passwordLabel"></label>
+      <input type="password" id="passwordInput" placeholder="" autocomplete="new-password">
+    </div>
+
+    <!-- Agree terms checkbox -->
+    <div class="checkbox-group">
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="agreeCheckbox">
+      </div>
+      <label for="agreeCheckbox" id="agreeLabel"></label>
+    </div>
+
+    <!-- Submit button -->
+    <div class="button-group">
+      <button class="btn btn-continue" id="signupButton"></button>
+    </div>
+
+    <!-- Prompt to log in -->
+    <span id="loginPrompt"></span>
+  </main>
+  <script src="scripts/domains.js"></script>
+  <script src="scripts/texts.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

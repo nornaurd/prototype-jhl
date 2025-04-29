@@ -1,0 +1,52 @@
+<!-- additional-email-info.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Additional email info</title>
+
+  <!-- Шрифти -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Стилі -->
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<!--
+  data-page      — ключ у pageTexts (див. нижче)
+  data-step      — номер кроку, щоб підсвітити його у sub-header
+  data-show-back — показати кнопку Back
+  data-show-continue — сховати кнопку Continue у sub-header (у нас буде власна)
+-->
+<body data-page="additionalEmailInfo" data-step="3" data-show-back="true" data-show-continue="false" data-show-step3="true">
+  <!-- Header & sub-header -->
+  <div id="header-placeholder"></div>
+  <div id="sub-header-placeholder"></div>
+
+  <!-- Page content -->
+  <main class="main-container">
+    <h1 id="title"></h1>
+    <p id="instructionText"></p>
+
+    <!-- Business email + hint -->
+    <div class="input-group">
+      <label for="emailInput" id="emailLabel"></label>
+      <input type="email"
+             id="emailInput"
+             placeholder=""
+             autocomplete="username">
+      <span id="emailHint" class="input-hint"></span>
+    </div>
+
+    <!-- Continue button -->
+    <div class="button-group">
+      <button class="btn btn-continue" id="businessContinueButton"></button>
+    </div>
+  </main>
+
+  <!-- Тексти та логіка -->
+  <script src="scripts/domains.js"></script>
+  <script src="scripts/texts.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

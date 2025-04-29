@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mailbox</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Можете прибрати цей <style>, якщо вже маєте style.css -->
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Щоб посилання займало всю ширину */
+    .image-link {
+      display: block;        /* розтягує посилання на всю ширину */
+    }
+
+    /* Картинка на всю ширину екрана */
+    .full-width-image {
+      width: 100%;
+      height: auto;          /* зберігає пропорції */
+      display: block;        /* прибирає пробіл під зображенням */
+    }
+  </style>
+</head>
+<body>
+  <!-- Клікабельна картинка → checkout.html -->
+  <a href="checkout.html" class="image-link">
+    <img src="assets/mailbox.png" alt="Mailbox mock-up" class="full-width-image">
+  </a>
+</body>
+</html>
