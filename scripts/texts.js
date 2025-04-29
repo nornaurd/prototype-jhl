@@ -10,7 +10,7 @@ const pageTexts = {
     preview: {
     },
     login: {
-      title: "Log in if you already have an account at ResearchGate",
+      title: "Log in if you already have an account at Company",
       emailLabel: "Email*",
       emailPlaceholder: "Enter your email",
       passwordLabel: "Password *",
