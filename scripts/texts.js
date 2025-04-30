@@ -76,6 +76,10 @@ const pageTexts = {
       line4: 'Made a mistake? <a href="login.html" class="signup-link">Start over</a>',
       prototypeHint: "Open your inbox (for the purposes of prototype)"
     },
-
+    accountActivated: {
+      title: "You’ve successfully activated your account", // Заголовок сторінки (h1)
+      subtitle: "Click the button below to proceed to the checkout and finish claiming <b>Nature Sciences</b>", // Пояснювальний текст
+      proceedButton: "To Checkout" // Текст кнопки
+    }    
   };
   

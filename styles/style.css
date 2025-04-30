@@ -420,3 +420,41 @@ p {
   color: #6F6F71;
 }
 
+.centered-content {
+  text-align: center;
+}
+
+.centered-content .button-group {
+  justify-content: center;
+}
+
+body[data-page="accountActivated"] #subtitle {
+  text-align: center;
+}
+
+body[data-page="accountActivated"] #title {
+  text-align: center;
+}
+
+/* === Стилі лише для сторінки accountActivated === */
+body[data-page="accountActivated"] .btn-continue {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  height: 40px;
+  font-weight: normal;         /* НЕ жирний */
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 20px;
+  background-color: #006DD9;   /* правильний синій */
+  color: white;
+}
+
+body[data-page="accountActivated"] .btn-continue:hover,
+body[data-page="accountActivated"] .btn-continue:focus {
+  text-decoration: none;
+  background-color: #005bb8;   /* темніший відтінок для hover */
+}
+
