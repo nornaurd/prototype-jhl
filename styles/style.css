@@ -338,6 +338,7 @@ p {
 .signup-link {
   color: #006DD9;
   text-decoration: none;
+  font-size: 14px;
 }
 
 .signup-link:hover,

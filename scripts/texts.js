@@ -54,10 +54,11 @@ const pageTexts = {
     additionalEmailInfo: {
       title: "Additional information",
       instructionText: "Provide your business email to help us confirm your affiliation with <b>BMC Biology.</b>",
-      emailLabel: "Business email *",
+      emailLabel: "Journal email *",
       emailPlaceholder: "Enter your business email",
       emailHint: "Use your journal email address",
-      businessContinueButton: "Continue"
+      businessContinueButton: "Continue",
+      iDontHaveEmailLink: 'I don’t have a journal email'
     },
     /* === Confirm e-mail page === */
     confirmEmail: {
