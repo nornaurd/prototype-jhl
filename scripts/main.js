@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!continueBtn || !searchInput || !searchErrorText || !dropdown || !checkbox || !checkboxWrapper) return;
 
-    const journalTitle = 'BMC Biology';
+    const journalTitle = 'Nature Sciences';
     const journalISSN  = '1741-7007';
 
     continueBtn.addEventListener('click', e => {
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (page === 'additionalInfoS') {
         window.location.href = 'confirm-email-s.html';
       } else {
-        window.location.href = 'checkout.html';
+        window.location.href = 'info-success.html';
       }
     });
   })();

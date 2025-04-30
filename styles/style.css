@@ -459,3 +459,32 @@ body[data-page="accountActivated"] .btn-continue:focus {
   background-color: #005bb8;   /* темніший відтінок для hover */
 }
 
+body[data-page="infoSuccess"] #subtitle {
+  text-align: center;
+}
+
+body[data-page="infoSuccess"] #title {
+  text-align: center;
+}
+
+/* === Стилі лише для сторінки infoSuccess === */
+body[data-page="infoSuccess"] .btn-continue {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 180px;
+  height: 40px;
+  font-weight: normal;         /* НЕ жирний */
+  font-size: 14px;
+  line-height: 1;
+  border-radius: 20px;
+  background-color: #006DD9;   /* правильний синій */
+  color: white;
+}
+
+body[data-page="infoSuccess"] .btn-continue:hover,
+body[data-page="infoSuccess"] .btn-continue:focus {
+  text-decoration: none;
+  background-color: #005bb8;   /* темніший відтінок для hover */
+}

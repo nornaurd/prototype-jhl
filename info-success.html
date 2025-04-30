@@ -1,0 +1,43 @@
+<!-- account-activated.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Account Activated</title>
+
+  <!-- Шрифти -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Стилі -->
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<!-- data-page — ключ у pageTexts (checkout) -->
+<body data-page="infoSuccess"
+      data-step="3"
+      data-show-back="false"
+      data-show-continue="false"
+      data-show-step3="true"
+      data-showSteps="false">
+
+  <!-- Header -->
+  <div id="header-placeholder"></div>
+
+  <!-- Основний контент -->
+  <main class="main-container centered-content">
+    <h1 id="title"></h1>
+
+    <p id="subtitle"></p>
+
+    <div class="button-group">
+        <a href="checkout.html" class="btn btn-continue" id="proceedButton"></a>
+      </div>
+      
+  </main>
+
+  <!-- Скрипти -->
+  <script src="scripts/domains.js"></script>
+  <script src="scripts/texts.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>

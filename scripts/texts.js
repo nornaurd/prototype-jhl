@@ -34,14 +34,14 @@ const pageTexts = {
     },
     additionalInfo: {
       title: "Additional information",
-      instructionText: "Provide us with additional information that will help us confirm your affiliation with <b>BMC Biology.</b>",
+      instructionText: "Provide us with additional information that will help us confirm your affiliation with <b>Nature Sciences.</b>",
       moreInfoLabel: "Additional information",
       moreInfoTextArea: "E.g. a link to the journal’s website",
       submitButton: "Continue"
     },
     additionalInfoS: {
       title: "Additional information",
-      instructionText: "Provide us with additional information that will help us confirm your affiliation with <b>BMC Biology.</b>",
+      instructionText: "Provide us with additional information that will help us confirm your affiliation with <b>Nature Sciences.</b>",
       moreInfoLabel: "Additional information",
       moreInfoTextArea: "E.g. a link to the journal’s website",
       submitButton: "Continue"
@@ -53,7 +53,7 @@ const pageTexts = {
     },
     additionalEmailInfo: {
       title: "Additional information",
-      instructionText: "Provide your business email to help us confirm your affiliation with <b>BMC Biology.</b>",
+      instructionText: "Provide your business email to help us confirm your affiliation with <b>Nature Sciences.</b>",
       emailLabel: "Journal email *",
       emailPlaceholder: "Enter your business email",
       emailHint: "Use your journal email address",
@@ -81,6 +81,11 @@ const pageTexts = {
       title: "You’ve successfully activated your account", // Заголовок сторінки (h1)
       subtitle: "Click the button below to proceed to the checkout and finish claiming <b>Nature Sciences</b>", // Пояснювальний текст
       proceedButton: "To Checkout" // Текст кнопки
-    }    
+    },
+    infoSuccess: {
+      title: "Your information is being processed", // Заголовок сторінки (h1)
+      subtitle: "Meanwhile you can proceed to checkout and finish claiming <b>Nature Sciences</b>", // Пояснювальний текст
+      proceedButton: "To Checkout" // Текст кнопки
+    }  
   };
   
