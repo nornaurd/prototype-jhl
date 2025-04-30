@@ -309,5 +309,13 @@ function setupSubHeader() {
     document.querySelectorAll('.conditional-step').forEach(el => {
       el.style.display = showStep3 ? '' : 'none';   // '' = за замовчуванням (видно)
     });
+
+    // Ховати або показувати кроки
+const stepsContainer = document.getElementById('stepsContainer');
+const showSteps = document.body.dataset.showsteps !== "false";
+if (stepsContainer) {
+  stepsContainer.style.display = showSteps ? '' : 'none';
+}
+
   
 }
