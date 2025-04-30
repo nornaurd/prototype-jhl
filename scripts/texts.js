@@ -39,6 +39,13 @@ const pageTexts = {
       moreInfoTextArea: "E.g. a link to the journal’s website",
       submitButton: "Continue"
     },
+    additionalInfoS: {
+      title: "Additional information",
+      instructionText: "Provide us with additional information that will help us confirm your affiliation with <b>BMC Biology.</b>",
+      moreInfoLabel: "Additional information",
+      moreInfoTextArea: "E.g. a link to the journal’s website",
+      submitButton: "Continue"
+    },
     checkout: {
       title: "Complete your claim",
       subtitle: "Proceed to payment or confirmation to finalize claiming your journal page.",
@@ -54,6 +61,14 @@ const pageTexts = {
     },
     /* === Confirm e-mail page === */
     confirmEmail: {
+      title: "Check your inbox",
+      line1: "We’ve sent an email to <b>test@journal.com.</b>",
+      line2: "Click the button in the email to confirm your email address.",
+      line3: 'Didn’t get it? Check your spam folder or <a href="login.html" class="signup-link">resend the email</a>',
+      line4: 'Made a mistake? <a href="login.html" class="signup-link">Start over</a>',
+      prototypeHint: "Open your inbox (for the purposes of prototype)"
+    },
+    confirmEmailS: {
       title: "Check your inbox",
       line1: "We’ve sent an email to <b>test@journal.com.</b>",
       line2: "Click the button in the email to confirm your email address.",
